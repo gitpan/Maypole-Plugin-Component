@@ -1,0 +1,29 @@
+NAME
+    Maypole::Plugin::Component - Run Maypole sub-requests as components
+
+SYNOPSIS
+        package MyApp;
+        use Maypole::Application qw(Component);
+
+        [% request.component("/beer/view_as_component/20") %]
+
+DESCRIPTION
+    This subclass of Maypole allows you to integrate the results of a
+    Maypole request into an existing request. You'll need to set up actions
+    and templates which return fragments of HTML rather than entire pages,
+    but once you've done that, you can use the "component" method of the
+    Maypole request object to call those actions. You may pass a query
+    string in the usual URL style. You should not fully qualify the Maypole
+    URLs.
+
+    Note that you need Maypole 2.0 or newer to use this module.
+
+AUTHOR
+    Sebastian Riedel <sri@oook.de>
+
+    Original version by Simon Cozens
+
+LICENSE
+    This library is free software. You can redistribute it and/or modify it
+    under the same terms as perl itself.
+
